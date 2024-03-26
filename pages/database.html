@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <style>
+        #addContactForm {
+            display: None;
+        }
+    </style>
+    <style>
+        #editContactForm {
+            display: None;
+        }
+    </style>
+
+    <title>Contacts List</title>
+</head>
+<body>
+    
+    <h1>Contacts List</h1>
+
+    <table id = "contactTable" class = "table table-striped">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Second Name</th>
+                <th>Fathers Name</th>
+                <th>Citizenship</th>
+                <th>Age</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table> 
+
+    <input type="button" id="showAddForm" value="Add New Contact">
+
+    <form id="addContactForm">
+        <label for="fname">First Name:</label>
+        <input type="text" id="fname" name="first_name" required>
+
+        <label for="sname">Second Name:</label>
+        <input type="text" id="sname" name="second_name" required>
+
+        <label for="faname">Fathers Name:</label>
+        <input type="text" id="faname" name="fathers_name" required>
+
+        <label for="cit">Citizenship:</label>
+        <input type="text" id="cit" name="citizenship" required>
+
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age" required>
+    
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    
+        <button type="submit">Add Contact</button>
+    </form>
+
+    <div id="message"></div>
+
+    <form id="editContactForm">
+        <label for="edit_fname">First Name:</label>
+        <input type="text" id="edit_fname" name="first_name" required>
+
+        <label for="edit_sname">Second Name:</label>
+        <input type="text" id="edit_sname" name="second_name" required>
+
+        <label for="edit_faname">Fathers Name:</label>
+        <input type="text" id="edit_faname" name="fathers_name" required>
+
+        <label for="edit_cit">Citizenship:</label>
+        <input type="text" id="edit_cit" name="citizenship" required>
+
+        <label for="edit_age">Age:</label>
+        <input type="text" id="edit_age" name="age" required>
+    
+        <label for="edit_email">Email:</label>
+        <input type="email" id="edit_email" name="email" required>
+    
+        <button type="submit">Edit Contact</button>
+    </form>
+    
+    <script type="text/javascript">
+        showAddForm.onclick = function () {
+            document.getElementById('showAddForm').style.display = 'none';
+            document.getElementById('addContactForm').style.display = 'initial';
+        };
+    </script>
+    <script src="databaseOps.js"></script>
+</body>
+</html>

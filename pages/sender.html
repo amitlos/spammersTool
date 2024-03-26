@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <title>Spammer Tool</title>
+</head>
+
+<body>
+    <h1> Contact List </h1>
+
+    <table id = "contactTable" class = "table table-striped">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Second Name</th>
+                <th>Fathers Name</th>
+                <th>Citizenship</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Choice</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table> 
+
+    <h2>Email Form</h2><br>
+
+    <form id="emailForm">
+        <label for="templateSelect">Choose an email template:</label>
+        <select id="templateSelect" name="template">
+            <option value="">--Please choose an option--</option>
+            <option value="Hello. How are you? Look at my new post on instagram! Here is a link: ">Instagram Post Promoting</option>
+            <option value="Hi buddy! What's up? Maybe we could hang out somewhere? Let me know if you like.">Email To Friends</option>
+            <option value="Hello! I am Tymofii. I would like to promote my goods. Here is a link to my advertisement:">Goods Promoting</option>
+            <option value="custom">Write My Own</option>
+        </select>
+        <br>
+        <label for="customText">Your Email Text:</label>
+        <textarea id="customText" name="customText" rows="4" cols="50">Select a template or write your email here.</textarea>
+        <br>
+        <button type="submit">Send Email</button>
+    </form>
+
+    <script>
+        document.getElementById('templateSelect').addEventListener('change', function() {
+            var textarea = document.getElementById('customText');
+            if (this.value === 'custom') {
+                textarea.value = '';
+            } else {
+                textarea.value = this.value;
+            }
+        });
+    </script>
+
+
+
+    <script src="senderOps.js"></script>
+</body>
